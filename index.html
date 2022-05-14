@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Administrador de Gastos</title>
+</head>
+<body id="body">
+    <nav class="BarraNavegacion navbar navbar-expand-md sticky-top navbar-right">
+        <!-- Brand -->
+        <a class="navbar-brand" href="index.html"><img src="./img/Icon.png" alt="logo" height="50" width="50"></a>
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon">   
+                <i class="fas fa-bars"></i>
+            </span>
+        </button>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav mr-auto">
+                <h1 class="titulo text-center">Bienvenido al Budget Planner!</h1>
+            </ul>
+        </div> 
+    </nav>
+
+    <!--Fin Barra Navegacion-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center">
+                <button type="button" id="agregar" class="btn btn-primary">Agregar Gastos</button>
+                <button type="button" id="eliminar" class="btn btn-danger">Eliminar Gastos</button>
+                <button type="button" id="calcular" class="btn btn-primary">Calcular Total</button>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-xs-12 col-md-4 col-sm-12">
+                <h2 class="subtitulo text-center">Gastos por mes</h2>
+                <canvas id="barChart" width="40" height="40"></canvas>
+            </div>
+            <div class="col-12 col-xs-12 col-md-4 col-sm-12">
+                <h2 class="subtitulo text-center">Gastos por categoria</h2>
+                <canvas id="doughnutChart" width="40" height="40"></canvas>
+            </div>
+            <div class="col-auto">
+                <h2 class="subtitulo text-center">Cotización</h2>
+                <table id="table" class="table table-responsive">
+                    <tbody id="cotizacion">
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Compra</th>
+                            <th>Venta</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <h2 class="subtitulo text-center">Listado de gastos</h2>
+                <table id="tablaTransacciones" class="table table-responsive">
+                    <tbody id="tbody">
+                        <tr>
+                            <th>Id</th>
+                            <th>Categoria</th>
+                            <th>Descripcion</th>
+                            <th>Mes</th>
+                            <th>Monto</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="main.js" type="module"></script>
+    <script src="transacciones.js" type="module"></script>
+    <script src="graficarBarras.js" type="module"></script>
+    <script src="graficarDona.js" type="module"></script>
+    <script src="obtenerDolar.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</body>
+</html>
